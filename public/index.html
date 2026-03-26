@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northstar Brokerage Sim</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-glow background-glow-left"></div>
+    <div class="background-glow background-glow-right"></div>
+
+    <main class="app-shell">
+      <section class="hero panel">
+        <div class="brand-lockup">
+          <img src="./logo.svg" alt="Northstar Brokerage logo" class="logo" />
+          <div>
+            <p class="eyebrow">Logistics Strategy Game</p>
+            <h1>Northstar Brokerage Sim</h1>
+          </div>
+        </div>
+        <p class="hero-copy">
+          Run a fast-moving freight brokerage for one simulated week. New customers arrive each day,
+          each load has tradeoffs, and carrier selection will shape your margin, service score, and
+          reputation.
+        </p>
+        <div class="hero-metrics">
+          <div>
+            <span>Game Length</span>
+            <strong>7 Days</strong>
+          </div>
+          <div>
+            <span>Goal</span>
+            <strong>Balance Service + Profit</strong>
+          </div>
+          <div>
+            <span>Win Condition</span>
+            <strong>Best Weekly Brokerage Score</strong>
+          </div>
+        </div>
+        <div class="hero-actions">
+          <button id="start-game" class="button button-primary">Start New Week</button>
+          <button id="next-day" class="button button-secondary" disabled>Advance Day</button>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel summary-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Weekly Snapshot</p>
+            <h2>Brokerage Scoreboard</h2>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span>Day</span>
+              <strong id="day-label">Not started</strong>
+            </div>
+            <div class="stat-card">
+              <span>Revenue</span>
+              <strong id="revenue-value">$0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Margin</span>
+              <strong id="margin-value">$0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Service</span>
+              <strong id="service-value">0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Loads Covered</span>
+              <strong id="coverage-value">0</strong>
+            </div>
+            <div class="stat-card">
+              <span>Weekly Score</span>
+              <strong id="score-value">0</strong>
+            </div>
+          </div>
+          <div class="ticker" id="status-ticker">
+            Start the simulation to see inbound customers, carrier options, and daily results.
+          </div>
+        </article>
+
+        <article class="panel customer-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Daily Work Queue</p>
+            <h2>Customer Loads</h2>
+          </div>
+          <div id="load-list" class="load-list empty-state">
+            The dispatch board will populate when the week begins.
+          </div>
+        </article>
+
+        <article class="panel carrier-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Routing Intelligence</p>
+            <h2>Carrier Bench</h2>
+          </div>
+          <div id="carrier-list" class="carrier-list"></div>
+        </article>
+
+        <article class="panel activity-panel">
+          <div class="panel-heading">
+            <p class="eyebrow">Operations Feed</p>
+            <h2>Daily Decisions</h2>
+          </div>
+          <div id="activity-log" class="activity-log">
+            <div class="activity-item muted">Waiting for the first day of operations.</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>

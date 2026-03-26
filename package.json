@@ -1,0 +1,9 @@
+{
+  "name": "brokerage-sim",
+  "version": "1.0.0",
+  "description": "One-week brokerage operations simulation game built with Node.js.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}
